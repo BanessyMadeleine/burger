@@ -1,0 +1,57 @@
+import flet as ft
+
+def main(page: ft.Page):
+    page.title = "Burgeeeeeeeer"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.window_width = 400
+    page.window_height = 430
+
+    txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
+
+    page.add(
+        ft.Column(
+            alignment=ft.MainAxisAlignment.CENTER,
+            controls = [
+
+                    ft.Row([ft.Text( "🍔", size = 30), ft.Text ("5€"), ft.Container(
+                            width=100,
+                            content=ft.TextField(
+                                value="0", read_only=True
+                            ),
+                        ), ft.IconButton(ft.icons.REMOVE), ft.IconButton(ft.icons.ADD)], alignment=ft.MainAxisAlignment.CENTER),
+
+                ft.Row([ft.Text( "🍟", size = 30), ft.Text ("2€"), ft.Container(
+                            width=100,
+                            content=ft.TextField(
+                                value="0", read_only=True
+                            ),
+                        ), ft.IconButton(ft.icons.REMOVE), ft.IconButton(ft.icons.ADD)], alignment=ft.MainAxisAlignment.CENTER),
+
+                ft.Row([ft.Text( "🥗", size = 30), ft.Text ("4€"), ft.Container(
+                            width=100,
+                            content=ft.TextField(
+                                value="0", read_only=True
+                            ),
+                        ), ft.IconButton(ft.icons.REMOVE), ft.IconButton(ft.icons.ADD)], alignment=ft.MainAxisAlignment.CENTER),
+
+                ft.Row([ft.Text( "🥃", size = 30), ft.Text ("3€"), ft.Container(
+                            width=100,
+                            content=ft.TextField(
+                                value="0", read_only=True
+                            ),
+                        ), ft.IconButton(ft.icons.REMOVE), ft.IconButton(ft.icons.ADD)], alignment=ft.MainAxisAlignment.CENTER),
+
+                ft.Divider(),
+
+                ft.Row([ft.Card(ft.Container(ft.Markdown("**TOTAL:** 0.00 €"))),
+                        ft.FilledButton(text = "Buy", icon = ft.icons.PAYMENT)
+                        ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN,),
+            
+
+
+
+                
+                
+    ]))
+
+ft.app(target=main)
